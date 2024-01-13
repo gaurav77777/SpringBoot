@@ -27,6 +27,7 @@ public class EmployeeMaster {
 	
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
     private Integer id;
 	

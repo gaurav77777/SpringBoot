@@ -24,7 +24,7 @@ public class DemoApplication {
         return args -> {
             Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
             	EmployeeMaster user = new EmployeeMaster();
-            	user.setName("Alexender");
+            	user.setName(name);
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);

@@ -33,7 +33,13 @@ public class EmployeeMaster {
 	
 	@Column
     private String name;
+	
+	@Column
+    private Integer departmrntId;
 
+	
+	
+	/*
 	@Override
 	public String toString() {
 		return "EmployeeMaster [id=" + id + ", name=" + name + "]";
@@ -54,7 +60,17 @@ public class EmployeeMaster {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public Integer getDepartmrntId() {
+		return departmrntId;
+	}
+
+	public void setDepartmrntId(Integer departmrntId) {
+		this.departmrntId = departmrntId;
+	}
 	
+	
+	*/
 	
 
 	

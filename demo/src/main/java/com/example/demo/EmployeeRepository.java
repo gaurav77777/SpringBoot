@@ -9,5 +9,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends CrudRepository<EmployeeMaster, Integer>{
+	
+	
+	
+	
+	
+	
 
 }

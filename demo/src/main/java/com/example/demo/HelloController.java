@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("api/emp")
-@CrossOrigin(origins = "http://localhost:3000")
+//@RequestMapping("api/emp")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class HelloController {
 	
 	@Autowired 
@@ -34,6 +34,7 @@ public class HelloController {
 
 	@GetMapping("/")
 	public String index() {
+		System.out.println("inside index");
 		return "Greetings from Spring Boot!";
 	}
 	
@@ -41,7 +42,7 @@ public class HelloController {
     @GetMapping("/employees") 
     public List<EmployeeMaster> fetchEmployeeList()
     {
-    	
+    	System.out.println("inside fetchEmployeeList");
     	List<EmployeeMaster> emp = new ArrayList<EmployeeMaster>(); 
     	EmployeeMaster emp17 = new EmployeeMaster();
     	emp17.setId(3);
@@ -71,7 +72,7 @@ public class HelloController {
  // get employee by id rest api
     @GetMapping("/employees/{id}")
     public ResponseEntity <EmployeeMaster> getEmployeeById(@PathVariable Integer id) {
-    	EmployeeMaster employee = employeeRepository.findById(id).get();
+    	EmployeeMaster employee = employeeService.fetchEmployee(id);
         return ResponseEntity.ok(employee);
     }
     
@@ -89,6 +90,23 @@ public class HelloController {
 
     	EmployeeMaster updatedEmployee = employeeRepository.save(employee);
         return ResponseEntity.ok(updatedEmployee);
+    }
+    
+	/*
+	 * @GetMapping("/getDepartment/{id}") public ResponseEntity<DepartmentDto>
+	 * getDepartmentByEmployeeId(@PathVariable("id") Integer userId){
+	 * 
+	 * System.out.println("inside getDepartmentByEmployeeId"+userId); DepartmentDto
+	 * departmentDto = employeeService.getDepartment(userId); return
+	 * ResponseEntity.ok(departmentDto); }
+	 */
+    
+    @GetMapping("/getDepartment/{id}")
+    public ResponseEntity<DepartmentDto> getDepartmentByEmployeeId(@PathVariable("id") Integer userId){
+    	
+    	System.out.println("inside getDepartmentByEmployeeId"+userId);
+    	DepartmentDto departmentDto = employeeService.getDepartment(userId);
+        return ResponseEntity.ok(departmentDto);
     }
 
 }

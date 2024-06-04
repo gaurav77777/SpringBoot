@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.client.RestTemplate;
 
 
 @EnableJpaRepositories( basePackages = {"com.*"} )
@@ -25,10 +26,16 @@ public class DemoApplication {
             Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
             	EmployeeMaster user = new EmployeeMaster();
             	user.setName(name);
+            	user.setDepartmrntId(1);
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);
         };
+    }
+	
+	@Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
     }
 
 }

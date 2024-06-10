@@ -14,10 +14,10 @@ import org.springframework.web.client.RestTemplate;
 @EnableJpaRepositories( basePackages = {"com.*"} )
 @ComponentScan(basePackages = {"com.*"})
 @SpringBootApplication(scanBasePackages={"com.*"})
-public class DemoApplication {
+public class EmployeeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(EmployeeApplication.class, args);
 	}
 	
 	@Bean

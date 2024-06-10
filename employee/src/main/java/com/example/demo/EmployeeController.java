@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 //@RequestMapping("api/emp")
 //@CrossOrigin(origins = "http://localhost:3000")
-public class HelloController {
+public class EmployeeController {
 	
 	@Autowired 
 	private EmployeeServiceImpl employeeService;

@@ -1,0 +1,20 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CodingPracticeApplication {
+	
+	
+	static List<String> list = new ArrayList<String>(); 
+
+	public static void main(String[] args) {
+		//SpringApplication.run(CodingPracticeApplication.class, args);
+		list.add("Hi");
+	}
+
+}

@@ -1,0 +1,88 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.*;
+
+
+
+import java.util.*;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CodingPracticeApplication {
+	
+	
+	
+
+	public static void main(String[] args) {
+		//SpringApplication.run(CodingPracticeApplication.class, args);
+		//Stream<Integer> stream = null ;
+		
+		
+		//----------------- Stream API Starts------------------------
+		/*
+		 * Stream<String> streamEmpty = Stream.empty(); List<Integer> list = new
+		 * ArrayList<>(); list.add(3); list.add(1); list.add(2);
+		 * System.out.println(list);
+		 */
+		
+		//list.stream().map(x->x*x).collect(Collectors.toList());
+		//List square = list.stream().map(x->x*x).collect(Collectors.toList());
+		//stream = (Stream<Integer>) list.stream().map(x->x*x).collect(Collectors.toList());
+		//System.out.println("square"+square);
+		//System.out.println("stream"+stream);
+		
+		//List<String> names = Arrays.asList("Reflection","Collection","Stream");
+		//List<String> result =names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
+		//Stream<String> result =(Stream<String>) names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
+		/*
+		 * List result =
+		 * names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
+		 * List result1 = names.stream().sorted().collect(Collectors.toList());
+		 * System.out.println("result"+result); System.out.println("result1"+result1);
+		 * System.out.println("streamEmpty"+streamEmpty); Collection<String> collection
+		 * = Arrays.asList("a", "b", "c"); Stream<String> streamOfCollection =
+		 * collection.stream();
+		 * System.out.println("streamOfCollection"+streamOfCollection.findAny());
+		 */
+		
+		//----------------- Stream API Ends------------------------
+		
+		
+		//-----------------Compare two list Starts------------------
+		
+		ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d"));
+		ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "e", "f"));
+		
+		List<String> listOfAdditionalItems = listOne.stream()
+			    .filter(item -> !listTwo.contains(item))
+			    .toList();
+		System.out.println("listOfAdditionalItems:"+listOfAdditionalItems);
+		
+		List<String> listOfSameItems = new ArrayList<>(listOne);
+		listOne.removeAll(listOfAdditionalItems);
+		
+
+	    
+	   
+
+	    
+		
+		
+		//-----------------Compare two list Ends------------------
+		
+		
+		/*
+		 * System.out.println("Unsorted ArrayList: " + list); Collections.sort(list);
+		 * System.out.println("Sorted ArrayList " + "in ascending order : " + list);
+		 * Collections.sort(list, Collections.reverseOrder());
+		 * System.out.println("Sorted ArrayList " + "in Descending order : " + list);
+		 */
+	}
+
+}

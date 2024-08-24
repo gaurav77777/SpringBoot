@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CodingPracticeApplication {
+	
+	
+	static List<Integer> list = new ArrayList<>(); 
+
+	public static void main(String[] args) {
+		//SpringApplication.run(CodingPracticeApplication.class, args);
+		list.add(3);
+		list.add(1);
+		list.add(2);
+		System.out.println(list);
+		System.out.println("Unsorted ArrayList: "
+                 + list); 
+		Collections.sort(list);
+		Collections.sort(list, Collections.reverseOrder());
+		System.out.println("Sorted ArrayList "
+                 + "in Descending order : "
+                 + list); 
+	}
+
+}
